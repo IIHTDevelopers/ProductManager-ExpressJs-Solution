@@ -7,7 +7,7 @@ class ProductServiceImpl extends ProductService {
             const products = await Product.find();
             return products;
         } catch (error) {
-            throw new Error('Failed to get all products.');
+            throw new Error('Failed to get all products');
         }
     }
 
@@ -16,7 +16,7 @@ class ProductServiceImpl extends ProductService {
             const product = await Product.create(productData);
             return product;
         } catch (error) {
-            throw new Error('Failed to create product.');
+            throw new Error('Failed to create product');
         }
     }
 
@@ -35,7 +35,7 @@ class ProductServiceImpl extends ProductService {
             const products = await Product.find(query);
             return products;
         } catch (error) {
-            throw new Error('Failed to search for products.');
+            throw new Error('Failed to search for products');
         }
     }
 
@@ -43,11 +43,11 @@ class ProductServiceImpl extends ProductService {
         try {
             const product = await Product.findById(productId);
             if (!product) {
-                throw new Error('Product not found.');
+                throw new Error('Product not found');
             }
             return product;
         } catch (error) {
-            throw new Error('Failed to get product.');
+            throw new Error('Failed to get product');
         }
     }
 
@@ -55,11 +55,11 @@ class ProductServiceImpl extends ProductService {
         try {
             const product = await Product.findByIdAndUpdate(productId, updatedProduct, { new: true });
             if (!product) {
-                throw new Error('Product not found.');
+                throw new Error('Product not found');
             }
             return product;
         } catch (error) {
-            throw new Error('Failed to update product.');
+            throw new Error('Failed to update product');
         }
     }
 
@@ -67,11 +67,11 @@ class ProductServiceImpl extends ProductService {
         try {
             const product = await Product.findByIdAndDelete(productId);
             if (!product) {
-                throw new Error('Product not found.');
+                throw new Error('Product not found');
             }
             return product;
         } catch (error) {
-            throw new Error('Failed to delete product.');
+            throw new Error('Failed to delete product');
         }
     }
 
@@ -80,7 +80,7 @@ class ProductServiceImpl extends ProductService {
             const products = await Product.find().sort({ ratings: -1 }).limit(limit);
             return products;
         } catch (error) {
-            throw new Error('Failed to get top rated products.');
+            throw new Error('Failed to get top rated products');
         }
     }
 }
